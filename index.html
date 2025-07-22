@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ufuk Hijau - Energi Terbarukan untuk Masa Depan Berkelanjutan</title>
+    <title>Ufuk Hijau - Solusi Energi Surya Terbaik di Indonesia</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -15,12 +16,12 @@
                 <h1>Ufuk Hijau</h1>
                 <span>Energi</span>
             </div>
-            <nav>
+            <nav class="desktop-nav">
                 <ul>
                     <li><a href="#home">Beranda</a></li>
                     <li><a href="#about">Tentang</a></li>
                     <li><a href="#services">Layanan</a></li>
-                    <li><a href="#why-us">Keunggulan</a></li>
+                    <li><a href="#portfolio">Portofolio</a></li>
                     <li><a href="#contact">Kontak</a></li>
                 </ul>
             </nav>
@@ -28,14 +29,23 @@
                 <i class="fas fa-bars"></i>
             </div>
         </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#portfolio">Portofolio</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <h2>Energi Terbarukan untuk Masa Depan Berkelanjutan</h2>
-            <p>Solusi lengkap Pembangkit Listrik Tenaga Surya (PLTS) untuk rumah tangga, industri, dan instansi pemerintah.</p>
-            <a href="#contact" class="btn">Mulai Konsultasi</a>
+            <p>Solusi lengkap Pembangkit Listrik Tenaga Surya (PLTS) untuk rumah tangga, industri, dan instansi pemerintah</p>
+            <a href="#contact" class="btn">Mulai Konsultasi <i class="fas fa-arrow-right"></i></a>
         </div>
     </section>
 
@@ -44,22 +54,33 @@
         <div class="container">
             <h2>Tentang Kami</h2>
             <div class="about-content">
-                <p><strong>PT Ufuk Hijau Energi</strong> adalah perusahaan EPC (Engineering, Procurement, and Construction) yang fokus pada solusi energi terbarukan, khususnya sistem Pembangkit Listrik Tenaga Surya (PLTS).</p>
-                <p>Kami menyediakan layanan <strong>end-to-end</strong> mulai dari studi kelayakan, desain sistem, pengadaan komponen, instalasi, hingga pengujian dan pemeliharaan berkala.</p>
+                <div class="about-text">
+                    <p><strong>PT Ufuk Hijau Energi</strong> adalah perusahaan EPC (Engineering, Procurement, and Construction) yang fokus pada solusi energi terbarukan, khususnya sistem Pembangkit Listrik Tenaga Surya (PLTS).</p>
+                    <p>Kami menyediakan layanan <strong>end-to-end</strong> mulai dari studi kelayakan, desain sistem, pengadaan komponen, instalasi, hingga pengujian dan pemeliharaan berkala.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/about-us.jpg" alt="Tim Ufuk Hijau" loading="lazy">
+                </div>
             </div>
 
             <div class="vision-mission">
                 <div class="vision">
+                    <div class="icon-box">
+                        <i class="fas fa-eye"></i>
+                    </div>
                     <h3>Visi Kami</h3>
                     <p>Menjadi perusahaan terdepan dalam solusi energi terbarukan multi-teknologi yang inovatif dan berkelanjutan di Indonesia.</p>
                 </div>
                 <div class="mission">
+                    <div class="icon-box">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
                     <h3>Misi Kami</h3>
                     <ul>
-                        <li>Menyediakan solusi energi terbarukan yang andal dan terjangkau</li>
-                        <li>Memberikan layanan end-to-end berkualitas tinggi</li>
-                        <li>Meningkatkan literasi energi bersih</li>
-                        <li>Berkontribusi dalam pengurangan emisi karbon</li>
+                        <li><i class="fas fa-check-circle"></i> Menyediakan solusi energi terbarukan yang andal</li>
+                        <li><i class="fas fa-check-circle"></i> Layanan end-to-end berkualitas tinggi</li>
+                        <li><i class="fas fa-check-circle"></i> Meningkatkan literasi energi bersih</li>
+                        <li><i class="fas fa-check-circle"></i> Berkontribusi dalam pengurangan emisi karbon</li>
                     </ul>
                 </div>
             </div>
@@ -72,102 +93,66 @@
             <h2>Layanan Kami</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <i class="fas fa-plug"></i>
+                    <div class="service-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
                     <h3>Grid-Tie (On-Grid)</h3>
                     <p>Terhubung ke jaringan PLN, cocok untuk area berlistrik stabil dengan biaya operasional rendah.</p>
+                    <a href="#contact" class="btn-small">Konsultasi Sekarang</a>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-battery-full"></i>
+                    <div class="service-icon">
+                        <i class="fas fa-battery-full"></i>
+                    </div>
                     <h3>Off-Grid</h3>
                     <p>Sistem mandiri dengan baterai penyimpanan, ideal untuk lokasi terpencil atau kebutuhan kritis.</p>
+                    <a href="#contact" class="btn-small">Konsultasi Sekarang</a>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-hdd"></i>
+                    <div class="service-icon">
+                        <i class="fas fa-hdd"></i>
+                    </div>
                     <h3>Hybrid</h3>
                     <p>Kombinasi on-grid dan off-grid dengan backup daya saat pemadaman.</p>
+                    <a href="#contact" class="btn-small">Konsultasi Sekarang</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Us Section -->
-    <section id="why-us" class="why-us-section">
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
         <div class="container">
-            <h2>Mengapa Memilih Kami?</h2>
-            <div class="features">
-                <div class="feature">
-                    <i class="fas fa-check-circle"></i>
-                    <h3>Tim Ahli Bersertifikat</h3>
-                    <p>Teknisi berpengalaman dengan sertifikasi internasional</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Garansi Panjang</h3>
-                    <p>Garansi sistem hingga 10 tahun dengan layanan purna jual</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Monitoring Real-time</h3>
-                    <p>Pantau performa sistem 24/7 melalui aplikasi khusus</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Layanan Terintegrasi</h3>
-                    <p>Dari konsultasi hingga pemeliharaan dalam satu paket</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section class="benefits-section">
-        <div class="container">
-            <h2>Manfaat Energi Surya</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <i class="fas fa-leaf"></i>
-                    <h3>Ramah Lingkungan</h3>
-                    <p>Reduksi emisi karbon ±1.2 ton CO₂ per tahun per 1 kWp</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-piggy-bank"></i>
-                    <h3>Hemat Biaya</h3>
-                    <p>Hemat hingga 70% dari tagihan listrik bulanan</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-chart-pie"></i>
-                    <h3>ROI Cepat</h3>
-                    <p>Balik modal dalam 3-7 tahun dengan umur panel 25+ tahun</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="process-section">
-        <div class="container">
-            <h2>Proyek Kami</h2>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Konsultasi</h3>
-                    <p>Diskusikan kebutuhan energi Anda</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Survey</h3>
-                    <p>Analisis lokasi dan potensi</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Desain</h3>
-                    <p>Rancangan sistem optimal</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Instalasi</h3>
-                    <p>Implementasi oleh tim ahli</p>
-                </div>
+            <h2>Portofolio Kami</h2>
+            <div class="portfolio-grid" id="lightgallery">
+                <a href="images/portfolio1.jpg" class="portfolio-item">
+                    <img src="images/portfolio1-thumb.jpg" alt="Proyek PLTS Rumah Tinggal" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>PLTS Rumah Tinggal</h3>
+                        <p>Kapasitas 5 kWp - Surakarta</p>
+                    </div>
+                </a>
+                <a href="images/portfolio2.jpg" class="portfolio-item">
+                    <img src="images/portfolio2-thumb.jpg" alt="Proyek PLTS Industri" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>PLTS Industri</h3>
+                        <p>Kapasitas 50 kWp - Semarang</p>
+                    </div>
+                </a>
+                <a href="images/portfolio3.jpg" class="portfolio-item">
+                    <img src="images/portfolio3-thumb.jpg" alt="Proyek PLTS Komersial" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>PLTS Komersial</h3>
+                        <p>Kapasitas 20 kWp - Yogyakarta</p>
+                    </div>
+                </a>
+                <a href="images/portfolio4.jpg" class="portfolio-item">
+                    <img src="images/portfolio4-thumb.jpg" alt="Proyek PLTS Pemerintah" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>PLTS Pemerintah</h3>
+                        <p>Kapasitas 100 kWp - Jakarta</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -191,20 +176,20 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form>
+                    <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" placeholder="Nama Anda" required>
+                            <input type="text" id="name" placeholder="Nama Anda" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Email" required>
+                            <input type="email" id="email" placeholder="Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" placeholder="Nomor Telepon">
+                            <input type="tel" id="phone" placeholder="Nomor Telepon">
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Pesan Anda" rows="4" required></textarea>
+                            <textarea id="message" placeholder="Pesan Anda" rows="4" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Kirim Pesan</button>
+                        <button type="submit" class="btn">Kirim Pesan <i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>
@@ -225,7 +210,7 @@
                         <li><a href="#home">Beranda</a></li>
                         <li><a href="#about">Tentang Kami</a></li>
                         <li><a href="#services">Layanan</a></li>
-                        <li><a href="#contact">Kontak</a></li>
+                        <li><a href="#portfolio">Portofolio</a></li>
                     </ul>
                 </div>
                 <div class="footer-legal">
@@ -240,6 +225,7 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
