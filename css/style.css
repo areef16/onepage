@@ -120,10 +120,10 @@ header.scrolled {
 
 .header-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Ini yang utama */
     align-items: center;
     padding: 1rem 0;
-    position: relative;
+    width: 100%; /* Tambahkan ini */
 }
 
 .logo {
@@ -146,10 +146,10 @@ header.scrolled {
 
 /* Desktop Navigation */
 .desktop-nav ul {
-    display: flex;
-    list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    gap: 1.5rem; /* Gantikan margin-left dengan gap */
 }
 
 .desktop-nav ul li {
@@ -515,7 +515,7 @@ header.scrolled {
     color: var(--primary);
 }
 
-.social-media {
+.social- {
     margin-top: 2rem;
     display: flex;
     gap: 0.8rem;
@@ -663,6 +663,8 @@ footer {
     .desktop-nav {
         display: none;
     }
+    /* ... */
+}
     
     .mobile-menu {
         display: block;
