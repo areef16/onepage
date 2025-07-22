@@ -1,16 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu');
-    const navMenu = document.querySelector('nav ul');
+    const mobileNav = document.querySelector('.mobile-nav');
     
     mobileMenuBtn.addEventListener('click', function() {
-        navMenu.classList.toggle('show');
+        mobileNav.classList.toggle('active');
+        this.classList.toggle('fa-times');
+        this.classList.toggle('fa-bars');
     });
 
     // Close mobile menu when clicking a link
-    document.querySelectorAll('nav ul li a').forEach(link => {
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
         link.addEventListener('click', () => {
-            navMenu.classList.remove('show');
+            mobileNav.classList.remove('active');
+            mobileMenuBtn.classList.remove('fa-times');
+            mobileMenuBtn.classList.add('fa-bars');
         });
     });
 
@@ -42,9 +46,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Initialize LightGallery for Portfolio
+    if (document.getElementById('lightgallery')) {
+        lightGallery(document.getElementById('lightgallery'), {
+            selector: '.portfolio-item',
+            download: false,
+            counter: false
+        });
+    }
+
+    // Form Submission
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the form data to a server
+            console.log('Form submitted:', { name, email, message });
+            
+            // Show success message
+            alert('Terima kasih! Pesan Anda telah terkirim. Kami akan segera menghubungi Anda.');
+            
+            // Reset form
+            contactForm.reset();
+        });
+    }
+
     // Animate Elements on Scroll
     const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.service-card, .feature, .benefit-card, .step');
+        const elements = document.querySelectorAll('.service-card, .vision, .mission, .portfolio-item, .contact-info, .contact-form');
         
         elements.forEach(element => {
             const elementPosition = element.getBoundingClientRect().top;
@@ -58,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // Set initial state for animated elements
-    document.querySelectorAll('.service-card, .feature, .benefit-card, .step').forEach(element => {
+    document.querySelectorAll('.service-card, .vision, .mission, .portfolio-item, .contact-info, .contact-form').forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';
         element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
