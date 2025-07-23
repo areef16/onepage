@@ -1,20 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu');
-    const mobileNav = document.querySelector('.mobile-nav');
+    const desktopNav = document.querySelector('.desktop-nav');
     
     mobileMenuBtn.addEventListener('click', function() {
-        mobileNav.classList.toggle('active');
+        desktopNav.classList.toggle('show');
         this.classList.toggle('fa-times');
-        this.classList.toggle('fa-bars');
     });
 
-    // Close mobile menu when clicking a link
-    document.querySelectorAll('.mobile-nav a').forEach(link => {
+    // Close menu when clicking a link
+    document.querySelectorAll('.desktop-nav a').forEach(link => {
         link.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
+            desktopNav.classList.remove('show');
             mobileMenuBtn.classList.remove('fa-times');
-            mobileMenuBtn.classList.add('fa-bars');
         });
     });
 
