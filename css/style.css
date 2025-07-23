@@ -431,13 +431,14 @@ header.scrolled {
 
 /* Portfolio Section */
 .portfolio-section {
+    padding: 5rem 0;
     background: var(--light);
 }
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
 .portfolio-item {
@@ -445,43 +446,32 @@ header.scrolled {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    height: 250px;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
 }
 
 .portfolio-item img {
     width: 100%;
-    height: 100%;
+    height: 250px;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    display: block;
 }
 
-.portfolio-item:hover img {
-    transform: scale(1.1);
-}
-
-.portfolio-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-    color: white;
+.portfolio-info {
     padding: 1.5rem;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
+    background: white;
 }
 
-.portfolio-item:hover .portfolio-overlay {
-    transform: translateY(0);
-}
-
-.portfolio-overlay h3 {
-    color: white;
+.portfolio-info h3 {
+    color: var(--dark);
     margin-bottom: 0.5rem;
 }
 
-.portfolio-overlay p {
-    color: rgba(255,255,255,0.8);
+.portfolio-info p {
+    color: var(--text-light);
     font-size: 0.9rem;
 }
 
