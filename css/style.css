@@ -509,8 +509,8 @@ header.scrolled {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 10px;
-    height: 10px;
+    width: 2px;
+    height: 2px;
     background: var(--primary);
     color: white;
     border-radius: 50%;
