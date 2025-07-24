@@ -514,25 +514,25 @@ header.scrolled {
     background: var(--primary);
     color: white;
     border-radius: 50%;
-    /*transition: all 0.3s ease;*/
-    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    /*font-size: 1.2rem;
     text-decoration: none;
     /*box-shadow: 0 2px 5px rgba(0,0,0,0.1);*/
 }
 
 .social-media a:hover {
     background: var(--primary-dark);
-    /*transform: translateY(-3px) scale(1.1);*/
+    transform: /*translateY(-3px)*/ scale(1.1);
     /*box-shadow: 0 5px 15px rgba(0,0,0,0.2);*/
 }
 
-.social-media a i {
+/*.social-media a i {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
-}
+}*/
 
 .contact-form {
     padding: 2rem;
