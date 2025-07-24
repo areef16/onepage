@@ -514,16 +514,16 @@ header.scrolled {
     background: var(--primary);
     color: white;
     border-radius: 50%;
-    transition: all 0.3s ease;
+    /*transition: all 0.3s ease;*/
     font-size: 1.2rem;
     text-decoration: none;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    /*box-shadow: 0 2px 5px rgba(0,0,0,0.1);*/
 }
 
 .social-media a:hover {
     background: var(--primary-dark);
-    transform: translateY(-3px) scale(1.1);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transform: /*translateY(-3px)*/ scale(1.1);
+    /*box-shadow: 0 5px 15px rgba(0,0,0,0.2);*/
 }
 
 .social-media a i {
