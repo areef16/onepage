@@ -1,17 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu');
-    const desktopNav = document.querySelector('.desktop-nav');
+    const mobileNav = document.querySelector('.mobile-nav');
     
     mobileMenuBtn.addEventListener('click', function() {
-        desktopNav.classList.toggle('show');
+        mobileNav.classList.toggle('active');
         this.classList.toggle('fa-times');
     });
 
-    // Close menu when clicking a link
-    document.querySelectorAll('.desktop-nav a').forEach(link => {
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
         link.addEventListener('click', () => {
-            desktopNav.classList.remove('show');
+            mobileNav.classList.remove('active');
             mobileMenuBtn.classList.remove('fa-times');
         });
     });
@@ -36,6 +36,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
+                // Close mobile menu if open
+                if (mobileNav.classList.contains('active')) {
+                    mobileNav.classList.remove('active');
+                    mobileMenuBtn.classList.remove('fa-times');
+                }
+                
                 window.scrollTo({
                     top: targetElement.offsetTop - 80,
                     behavior: 'smooth'
@@ -43,15 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
-    // Initialize LightGallery for Portfolio
-    if (document.getElementById('lightgallery')) {
-        lightGallery(document.getElementById('lightgallery'), {
-            selector: '.portfolio-item',
-            download: false,
-            counter: false
-        });
-    }
 
     // Form Submission
     const contactForm = document.getElementById('contactForm');
@@ -62,10 +59,16 @@ document.addEventListener('DOMContentLoaded', function() {
             // Get form values
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
             const message = document.getElementById('message').value;
             
             // Here you would typically send the form data to a server
-            console.log('Form submitted:', { name, email, message });
+            console.log('Form submitted:', { 
+                name: name,
+                email: email,
+                phone: phone,
+                message: message 
+            });
             
             // Show success message
             alert('Terima kasih! Pesan Anda telah terkirim. Kami akan segera menghubungi Anda.');
@@ -77,7 +80,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Animate Elements on Scroll
     const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.service-card, .vision, .mission, .portfolio-item, .contact-info, .contact-form');
+        const elements = document.querySelectorAll(
+            '.service-card, .vision, .mission, ' +
+            '.portfolio-item, .contact-info, ' +
+            '.contact-form, .about-content'
+        );
         
         elements.forEach(element => {
             const elementPosition = element.getBoundingClientRect().top;
@@ -91,7 +98,11 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // Set initial state for animated elements
-    document.querySelectorAll('.service-card, .vision, .mission, .portfolio-item, .contact-info, .contact-form').forEach(element => {
+    document.querySelectorAll(
+        '.service-card, .vision, .mission, ' +
+        '.portfolio-item, .contact-info, ' +
+        '.contact-form, .about-content'
+    ).forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';
         element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
