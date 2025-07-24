@@ -112,7 +112,7 @@ header {
     top: 0;
     z-index: 1000;
     transition: all 0.3s ease;
-    padding: 1.5rem 0; /* Menambah padding untuk tinggi header */
+    padding: 3rem 0; /* Menambah padding untuk tinggi header */
 }
 
 header.scrolled {
@@ -132,7 +132,7 @@ header.scrolled {
 }
 
 .logo img {
-    width: 180px;
+    width: 250px;
     height: auto;
 }
 
@@ -223,7 +223,7 @@ header.scrolled {
     align-items: center;
     text-align: center;
     color: white;
-    padding-top: 80px;
+    padding-top: 150px;
 }
 
 .hero .container {
