@@ -634,7 +634,7 @@ footer {
     max-width: 200px;      /* Sesuaikan ukuran */
     height: auto;
     margin-bottom: 1rem;   /* Jarak antara logo dan teks deskripsi */
-    filter: brightness(0) invert(1); /* Ubah logo jadi putih */
+    /*filter: brightness(0) invert(1);  Ubah logo jadi putih */
 }
 
 @media (max-width: 768px) {
