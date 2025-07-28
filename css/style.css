@@ -623,10 +623,24 @@ footer {
     }
 }
 
-.footer-logo h3 {
+/*.footer-logo h3 {
     color: white;
     margin-bottom: 1rem;
     font-size: 1.5rem;
+}*/
+
+/* TAMBAHKAN INI */
+.footer-logo img {
+    max-width: 200px;      /* Sesuaikan ukuran */
+    height: auto;
+    margin-bottom: 1rem;   /* Jarak antara logo dan teks deskripsi */
+    filter: brightness(0) invert(1); /* Ubah logo jadi putih */
+}
+
+@media (max-width: 768px) {
+    .footer-logo img {
+        max-width: 150px;  /* Ukuran lebih kecil di mobile */
+    }
 }
 
 .footer-logo p {
