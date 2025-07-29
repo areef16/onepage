@@ -7,6 +7,85 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Contact Section Styles */
+        .contact-section {
+            padding: 4rem 0;
+            background: #f9f9f9;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .contact-info-inner {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-detail i {
+            color: #4CAF50;
+            margin-right: 1rem;
+            margin-top: 3px;
+            font-size: 1.1rem;
+        }
+
+        .contact-detail p {
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .social-title {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-media {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-media a {
+            color: #555;
+            font-size: 1.4rem;
+            transition: color 0.3s;
+        }
+
+        .social-media a:hover {
+            color: #4CAF50;
+        }
+
+        .contact-form {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -167,33 +246,39 @@
         </div>
     </section>
 
-    <!-- Contact Section - Updated with Formspree ID -->
+    <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
             <h2>Hubungi Kami</h2>
             <div class="contact-grid">
+                <!-- Left Column - Contact Info -->
                 <div class="contact-info">
-                    <h3>Kantor Kami</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Jl. Puntodewo No. 53, Cemani, Grogol, Sukoharjo, Jawa Tengah 57552</p>
-                    <p><i class="fas fa-phone"></i> +62 878-372-8688</p>
-                    <p><i class="fas fa-envelope"></i> info@ufukhijau.com</p>
-                    
-                    <div class="social-media">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    <div class="contact-info-inner">
+                        <h3>Kantor Kami</h3>
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Jl. Puntodewo No. 53, Cemani, Grogol, Sukoharjo, Jawa Tengah 57552</p>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-phone"></i>
+                            <p>+62 878-372-8688</p>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <p>info@ufukhijau.com</p>
+                        </div>
+                        
+                        <h3 class="social-title">Media Sosial</h3>
+                        <div class="social-media">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
                     </div>
-
-                    <!-- WhatsApp Quick Button -->
-                   <!-- <div class="whatsapp-quick">
-                        <a href="https://wa.me/628783728688" class="btn whatsapp-btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Chat Langsung
-                        </a>
-                        <p class="response-time"><i class="fas fa-bolt"></i> Respon cepat dalam 5 menit</p>
-                    </div>
-                </div> -->
+                </div>
                 
+                <!-- Right Column - Contact Form -->
                 <div class="contact-form">
                     <form id="contactForm" action="https://formspree.io/f/mzzvgyog" method="POST">
                         <div class="form-group">
