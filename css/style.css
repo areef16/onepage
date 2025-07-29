@@ -618,12 +618,13 @@ header.scrolled {
     border-radius: 50%;
     font-size: calc(var(--icon-size) * 0.5);
     text-decoration: none;
-    transition: none;
+    transition: none !important;
 }
 
 .social-media a:hover {
-    background: var(--primary);
-    color: white;
+    background: var(--primary) !important;
+    color: white !important;
+    transform: none !important;
 }
 
 .contact-form {
