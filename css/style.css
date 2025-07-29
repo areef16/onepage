@@ -613,17 +613,18 @@ header.scrolled {
     place-items: center;
     width: var(--icon-size);
     height: var(--icon-size);
-    background: var(--primary);
+    background: transparent;
     color: white;
     border-radius: 50%;
     font-size: calc(var(--icon-size) * 0.5);
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: none;
 }
 
 .social-media a:hover {
-    background: var(--primary-dark);
-    transform: translateY(-3px);
+    background: transparent;
+    transform: none;
+    color: white;
 }
 
 .contact-form {
