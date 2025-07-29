@@ -19,21 +19,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Header Scroll Effect
     const header = document.getElementById('header');
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
+        header.classList.toggle('scrolled', window.scrollY > 50);
     });
 
     // Smooth Scrolling for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
             const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+            if (targetId === '#' || targetId === '#contact') return;
             
+            e.preventDefault();
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 // Close mobile menu if open
@@ -50,31 +45,85 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Form Submission
+    // Form Submission with Formspree
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const message = document.getElementById('message').value;
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
             
-            // Here you would typically send the form data to a server
-            console.log('Form submitted:', { 
-                name: name,
-                email: email,
-                phone: phone,
-                message: message 
-            });
+            try {
+                // Show loading state
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+                
+                // Prepare form data
+                const formData = new FormData(this);
+                
+                // Send to Formspree
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Show success message
+                    const successDiv = document.createElement('div');
+                    successDiv.className = 'form-success';
+                    successDiv.innerHTML = 'Terima kasih! Pesan Anda telah terkirim. Kami akan segera menghubungi Anda.';
+                    contactForm.appendChild(successDiv);
+                    
+                    // Reset form
+                    contactForm.reset();
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        successDiv.style.opacity = '0';
+                        setTimeout(() => successDiv.remove(), 300);
+                    }, 5000);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                alert('Maaf, terjadi kesalahan saat mengirim pesan. Silakan coba lagi atau hubungi kami melalui WhatsApp.');
+                console.error('Form submission error:', error);
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            }
+        });
+    }
+
+    // WhatsApp Click Tracking
+    document.querySelectorAll('[href*="whatsapp"]').forEach(btn => {
+        btn.addEventListener('click', function() {
+            // You can add analytics tracking here
+            console.log('WhatsApp clicked:', this.href);
             
-            // Show success message
-            alert('Terima kasih! Pesan Anda telah terkirim. Kami akan segera menghubungi Anda.');
-            
-            // Reset form
-            contactForm.reset();
+            // For Google Analytics (if available)
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-XXXXXX/YYYYYYYY',
+                    'event_callback': function() {
+                        window.location.href = btn.href;
+                    }
+                });
+            }
+        });
+    });
+
+    // Auto-set reply-to email
+    const emailInput = document.querySelector('input[name="email"]');
+    const replyToInput = document.querySelector('input[name="_replyto"]');
+    if (emailInput && replyToInput) {
+        emailInput.addEventListener('input', function() {
+            replyToInput.value = this.value;
         });
     }
 
@@ -108,9 +157,13 @@ document.addEventListener('DOMContentLoaded', function() {
         element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     });
 
-    // Run once on load
-    animateOnScroll();
+    // Run animations once on load
+    setTimeout(animateOnScroll, 300);
 
-    // Run on scroll
-    window.addEventListener('scroll', animateOnScroll);
+    // Run on scroll with throttle
+    let isScrolling;
+    window.addEventListener('scroll', function() {
+        clearTimeout(isScrolling);
+        isScrolling = setTimeout(animateOnScroll, 50);
+    }, false);
 });
