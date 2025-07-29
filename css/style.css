@@ -613,7 +613,7 @@ header.scrolled {
     place-items: center;
     width: var(--icon-size);
     height: var(--icon-size);
-    background: transparent;
+    background: var(--primary);
     color: white;
     border-radius: 50%;
     font-size: calc(var(--icon-size) * 0.5);
@@ -622,8 +622,7 @@ header.scrolled {
 }
 
 .social-media a:hover {
-    background: transparent;
-    transform: none;
+    background: var(--primary);
     color: white;
 }
 
