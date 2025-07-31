@@ -613,13 +613,14 @@ header.scrolled {
     place-items: center;
     width: var(--icon-size);
     height: var(--icon-size);
-    background: var(--primary);
-    color: white;
-    border-radius: 50%;
+    background: #4CAF50; /* Mengatur warna latar belakang hijau */
+    color: white; /* Mengatur warna ikon menjadi putih */
+    border-radius: 50%; /* Membuat elemen berbentuk lingkaran */
     font-size: calc(var(--icon-size) * 0.5);
-    text-decoration: none;
-    transition: none !important;
+    text-decoration: none; /* Menghapus garis bawah dari tautan */
+    transition: none !important; /* Menghapus efek transisi */
 }
+
 
 /*.social-media a:hover {
     background: var(--primary) !important;
