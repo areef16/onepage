@@ -566,7 +566,7 @@ header.scrolled {
     font-size: 0.9rem;
 }
 
-/* Contact Section */
+/* Contact Section - Fixed Social Media Icons */
 .contact-section {
     background: white;
 }
@@ -605,28 +605,33 @@ header.scrolled {
 .social-media {
     margin-top: 2rem;
     display: flex;
-    gap: 0.8rem;
+    gap: 1rem;
 }
 
 .social-media a {
-    display: grid;
-    place-items: center;
-    width: var(--icon-size);
-    height: var(--icon-size);
-    background: #4CAF50; /* Mengatur warna latar belakang hijau */
-    color: white; /* Mengatur warna ikon menjadi putih */
-    border-radius: 50%; /* Membuat elemen berbentuk lingkaran */
-    font-size: calc(var(--icon-size) * 0.5);
-    text-decoration: none; /* Menghapus garis bawah dari tautan */
-    transition: none !important; /* Menghapus efek transisi */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #2ecc71; /* Fixed green color */
+    color: white !important;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: none !important;
 }
 
+.social-media a i {
+    font-family: 'Font Awesome 6 Brands';
+    font-weight: 400;
+}
 
-/*.social-media a:hover {
-    background: var(--primary) !important;
+.social-media a:hover {
+    background: #2ecc71 !important;
     color: white !important;
     transform: none !important;
-}*/
+}
 
 .contact-form {
     padding: 2rem;
