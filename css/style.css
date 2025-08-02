@@ -58,6 +58,12 @@ body {
     overflow-x: hidden;
 }
 
+/* Add this to ensure Font Awesome icons load properly */
+body.fa-loaded {
+    visibility: visible;
+    opacity: 1;
+}
+
 .container {
     width: 90%;
     max-width: 1200px;
@@ -614,23 +620,38 @@ header.scrolled {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background: #2ecc71; /* Fixed green color */
+    background: var(--primary);
     color: white !important;
     border-radius: 50%;
     font-size: 1.2rem;
     text-decoration: none;
     transition: none !important;
+    /* Fix for icon visibility */
+    opacity: 1 !important;
+    -webkit-font-smoothing: antialiased;
 }
 
 .social-media a i {
-    font-family: 'Font Awesome 6 Brands';
+    font-family: 'Font Awesome 6 Brands' !important;
     font-weight: 400;
+    /* Ensure icons are visible */
+    display: inline-block;
+    font-style: normal;
+    line-height: 1;
+    /* Fix for icon rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.social-media a:hover {
-    background: #2ecc71 !important;
+/* Disable all hover effects */
+.social-media a:hover,
+.social-media a:focus,
+.social-media a:active {
+    background: var(--primary) !important;
     color: white !important;
     transform: none !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
 }
 
 .contact-form {
@@ -876,4 +897,20 @@ select:focus-visible {
     .whatsapp-float {
         animation: none;
     }
+}
+
+/* Font Awesome Loading Fix */
+@keyframes fa-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.fa-spin {
+    animation: fa-spin 2s infinite linear;
+}
+
+/* Ensure icons are visible */
+body.loaded .social-media a i {
+    visibility: visible !important;
+    opacity: 1 !important;
 }
