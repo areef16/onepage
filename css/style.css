@@ -61,7 +61,7 @@ body {
 /* Add this to ensure Font Awesome icons load properly */
 body.fa-loaded {
     visibility: visible;
-    opacity: none;
+    opacity: 1;
 }
 
 .container {
@@ -914,4 +914,5 @@ body.loaded .social-media a i {
     visibility: visible !important;
     opacity: 1 !important;
 }
+
 
